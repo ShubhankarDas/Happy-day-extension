@@ -55,13 +55,27 @@ app.get('/', async (req, res) => {
   }
 });
 
-app.post('/quote', async (req, res) => {
-  res = await addQuote(req.params);
-  return res.status(200).send({
-    status: 200,
-    res: req.params,
-  });
+app.get('/quote', async (req, res) => {
+  quote = await getRandomQuote();
+  if (quote) {
+    return res.status(200).send({
+      status: 200,
+      res: quote,
+    });
+  } else {
+    return res.status(200).send({
+      status: 404,
+    });
+  }
 });
+
+// app.post('/quote', async (req, res) => {
+//   res = await addQuote(req.params);
+//   return res.status(200).send({
+//     status: 200,
+//     res: req.params,
+//   });
+// });
 
 app.use((req, res, next) => {
   res.redirect('/');

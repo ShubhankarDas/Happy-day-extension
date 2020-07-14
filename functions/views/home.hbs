@@ -4,12 +4,16 @@
 <head>
   <title>Have a happy day</title>
   <link rel="stylesheet" href="./styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <div class="wrapper">
     <div class="container">
+      <div class="search-container hide">
+        <form id="search-form" method="get" action="https://www.google.com/search">
+          <input id="search" type="text" name="q" size="31" value="" placeholder="Google search..">
+        </form>
+      </div>
       <img class="hero-image" src="./images/{{image_name}}" />
       <h3>{{message}}</h3>
     </div>
@@ -39,6 +43,18 @@
       if (m[y]) m[y] = function () { return g._w[y].apply(this, arguments) };
       g._v = "1.2.0";
     })(window, document, window['_fs_namespace'], 'script', 'user');
+
+    // Submit google search
+    document.getElementById('search')
+      .addEventListener('keyup', function (event) {
+        if (event.code === 'Enter') {
+          event.preventDefault();
+          document.querySelector('#search-form').submit();
+        }
+      });
+
+    // Toggle search bar
+
   </script>
 </body>
 
