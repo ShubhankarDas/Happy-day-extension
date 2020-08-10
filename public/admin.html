@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin | Have a happy day</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <div class="header-wrapper">
+        <div class="container header">
+          <p>Choose an illustration</p>
+          <div id="save-cta" class="btn btn-primary hide">SAVE</div>
+          <div class="flash-wrapper">
+            <div class="flash-message">Saved</div>
+          </div>
+        </div>
+      </div>
+      <div class="container card-container">
+        <div class="card">
+          <img class="card-image" src="./images/chart.svg" />
+        </div>
+        <div class="card">
+          <img class="card-image" src="./images/chart.svg" />
+        </div>
+        <div class="card">
+          <img class="card-image" src="./images/chart.svg" />
+        </div>
+        <div class="card">
+          <img class="card-image" src="./images/chart.svg" />
+        </div>
+        <div class="card">
+          <img class="card-image" src="./images/chart.svg" />
+        </div>
+      </div>
+      <div class="container message-container hide">
+        <div id="back-btn" class="text-btn">
+          <h6>back</h6>
+        </div>
+        <img class="hero-image" src="" />
+        <input id="message" size="200" class="message" autocomplete="off" placeholder="Start writing :)"></input>
+      </div>
+    </div>
+  </body>
+  <script src="./jquery.min.js"></script>
+  <script src="./admin.js"></script>
+</html>

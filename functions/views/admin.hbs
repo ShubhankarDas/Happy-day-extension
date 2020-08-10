@@ -2,26 +2,36 @@
 <html>
 
 <head>
-  <title>Have a happy day</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Admin | Have a happy day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./admin.css" />
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <input name='message' type="text" id='message' placeholder="Quote" />
-      <select id="image_name" name="image_name">
-        {{#each image_names}}
-          <option value="{{this}}">{{this}}</option>
-        {{/each}}
-      </select>
-      <button id="submit">Add Quote</button>
-      <p id="statue-message"></p>
+  <div class="main-wrapper">
+    <div class="header-wrapper">
+      <div class="container header">
+        <p>Choose an illustration</p>
+        <div id="save-cta" class="btn btn-primary hide">SAVE</div>
+      </div>
+    </div>
+    <div class="container card-container">
+      {{#each images}}
+        <div class="card">
+          <img class="card-image" src="./images/{{this}}" />
+        </div>
+      {{/each}}
+    </div>
+    <div class="container message-container hide">
+      <div id="back-btn" class="text-btn">
+        <h6>back</h6>
+      </div>
+      <img class="hero-image" src="" />
+      <input id="message" size="200" class="message" autocomplete="off" placeholder="Start writing :)"></input>
     </div>
   </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./jquery.min.js"></script>
 <script src="./admin.js"></script>
 
 </html>
