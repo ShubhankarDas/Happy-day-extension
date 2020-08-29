@@ -1,10 +1,10 @@
-@import 'fonts.css';
+@import "fonts.css";
 
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  font-family: 'Balsamiq Sans', 'Roboto', sans-serif;
+  font-family: "Balsamiq Sans", "Roboto", sans-serif;
 }
 
 .wrapper {
@@ -14,6 +14,33 @@ body {
   flex-direction: column;
   justify-content: center;
   background-color: #f9f9f9;
+}
+
+.extension-container {
+  position: absolute;
+  top: 12px;
+  border: 1px solid #03b0ff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transform: translateY(-250%);
+}
+
+.extension-container a {
+  text-decoration: none;
+  color: #03b0ff;
+}
+
+.extension-container.active {
+  transition: transform 200ms ease-in-out 1s;
+  transform: translateY(0);
+}
+
+.extension-container:hover,
+.extension-container:hover a {
+  border-color: #1966d6;
+  color: #1966d6;
 }
 
 .container {
