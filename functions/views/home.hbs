@@ -8,7 +8,7 @@
 
 <body>
   <div class="wrapper">
-    <div class="extension-container active">
+    <div class="extension-container">
       <a href="https://chrome.google.com/webstore/detail/have-a-happy-day/hoejcgkhholkbmljbndmnndnoojckald"
         target="_blank">Get extension for Chrome</a>
     </div>
@@ -57,7 +57,9 @@
         }
       });
 
-    // Toggle search bar
+    setTimeout(() => {
+      document.getElementsByClassName('extension-container')[0].classList.add('active');
+    }, 500)
 
   </script>
 </body>

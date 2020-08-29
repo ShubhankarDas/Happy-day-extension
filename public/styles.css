@@ -24,6 +24,8 @@ body {
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+  transition: transform 200ms ease-in-out;
+  transition-delay: 1500ms;
   transform: translateY(-250%);
 }
 
@@ -33,7 +35,6 @@ body {
 }
 
 .extension-container.active {
-  transition: transform 200ms ease-in-out 1s;
   transform: translateY(0);
 }
 
