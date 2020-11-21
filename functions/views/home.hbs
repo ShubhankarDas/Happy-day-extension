@@ -18,7 +18,11 @@
           <input id="search" type="text" name="q" size="31" value="" placeholder="Google search..">
         </form>
       </div>
-      <img class="hero-image" src="./images/{{image_name}}" />
+      {{#if image_link}}
+        <img class="hero-image" src="{{image_link}}" />
+      {{else}}
+        <img class="hero-image" src="./images/{{image_name}}" />
+      {{/if}}
       <h3>{{message}}</h3>
     </div>
   </div>

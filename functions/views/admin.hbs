@@ -17,21 +17,53 @@
     </div>
     <div class="container card-container">
       {{#each images}}
-        <div class="card">
-          <img class="card-image" src="./images/{{this}}" />
+        <div class="card select">
+          <img class="card-image" src="{{this}}" />
         </div>
       {{/each}}
+      <div class="card add">
+        <img class="card-image" src="./images/plus.svg" />
+      </div>
     </div>
     <div class="container message-container hide">
       <div id="back-btn" class="text-btn">
         <h6>back</h6>
       </div>
       <img class="hero-image" src="" />
+      <input class="add-image" type="file" id="new-image" name="new-image" accept="image/*" onchange="readURL(this);">
       <input id="message" size="200" class="message" autocomplete="off" placeholder="Start writing :)"></input>
     </div>
   </div>
 </body>
 <script src="./jquery.min.js"></script>
 <script src="./admin.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-storage.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDeIzv2B-rbr-AgDXHGzGVGuy79_ua5GIM",
+
+    authDomain: "have-a-happy-day.firebaseapp.com",
+    databaseURL: "https://have-a-happy-day.firebaseio.com",
+    projectId: "have-a-happy-day",
+    storageBucket: "have-a-happy-day.appspot.com",
+    messagingSenderId: "945780311693",
+    appId: "1:945780311693:web:5bf4313571e0ea091ec4c4",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  var storage = firebase.storage();
+</script>
 
 </html>
