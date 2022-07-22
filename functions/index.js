@@ -88,6 +88,7 @@ app.get("/", async (req, res) => {
       image_name: quote.image_name,
       message: quote.message,
       image_link: quote.image_link,
+      current_year: new Date().getFullYear(),
     });
   } else {
     return res.render("home", {
