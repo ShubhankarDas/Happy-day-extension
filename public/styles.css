@@ -1,4 +1,5 @@
 @import "fonts.css";
+@import "vars.css";
 
 body {
   margin: 0;
@@ -13,13 +14,32 @@ body {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: var(--main-wrapper-background-color);
+
+  transition: background-color 500ms ease-in-out, color 1200ms ease-in-out;
+  -webkit-transition: background-color 500ms ease-in-out,
+    color 1200ms ease-in-out;
+  -o-transition: background-color 500ms ease-in-out, color 1200ms ease-in-out;
+  -moz-transition: background-color 500ms ease-in-out, color 1200ms ease-in-out;
+}
+
+.options-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  fill: var(--options-color);
+  padding: 16px;
+  cursor: pointer;
+}
+
+.options-container:hover {
+  fill: var(--options-color-hover);
 }
 
 .extension-container {
   position: absolute;
   top: 12px;
-  border: 1px solid #03b0ff;
+  border: 1px solid var(--button-border-color);
   padding: 8px 10px;
   border-radius: 4px;
   font-size: 16px;
@@ -31,7 +51,7 @@ body {
 
 .extension-container a {
   text-decoration: none;
-  color: #03b0ff;
+  color: var(--button-font-color);
 }
 
 .extension-container.active {
@@ -40,8 +60,8 @@ body {
 
 .extension-container:hover,
 .extension-container:hover a {
-  border-color: #1966d6;
-  color: #1966d6;
+  border-color: var(--button-border-color-hover);
+  color: var(--button-font-color-hover);
 }
 
 .container {
@@ -74,7 +94,7 @@ body {
 
 h3 {
   text-align: center;
-  color: hsla(0, 0%, 0%, 0.9);
+  color: var(--primary-font-color);
   font-size: 3rem;
   line-height: 1.1;
   margin: 0 14px;
@@ -83,7 +103,7 @@ h3 {
 
 .social-container {
   font-size: 1.4rem;
-  color: #79828f;
+  color: var(--secondary-font-color);
   position: fixed;
   bottom: 0;
   margin: 14px;
@@ -92,21 +112,12 @@ h3 {
 
 .social-container a {
   text-decoration: none;
-  color: #6499e7;
+  color: var(--primary-anchor-color);
   font-weight: 600;
 }
 
 .social-container a:hover {
-  color: #1966d6;
-}
-.time-container {
-  display: flex;
-  position: absolute;
-  top: -100px;
-  width: 100%;
-  justify-content: center;
-  font-size: 100px;
-  color: rgba(0, 0, 0, 0.75);
+  color: var(--primary-anchor-color-hover);
 }
 
 @media screen and (min-width: 1024px) {

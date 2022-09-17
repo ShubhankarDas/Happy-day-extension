@@ -1,0 +1,42 @@
+:root {
+  --light-white: #f9f9f9;
+  --light-blue: #03b0ff;
+  --dark-blue: #1966d6;
+  --off-blue: #6499e7;
+  --light-black: hsla(0, 0%, 0%, 0.9);
+  --grey: #79828f;
+}
+
+.dark-mode {
+  --main-wrapper-background-color: var(--light-black);
+  --primary-font-color: var(--light-white);
+  --secondary-font-color: var(--grey);
+
+  --options-color: var(--light-white);
+  --options-color-hover: var(--grey);
+
+  --primary-anchor-color: var(--off-blue);
+  --primary-anchor-color-hover: var(--dark-blue);
+
+  --button-border-color: var(--light-blue);
+  --button-font-color: var(--light-blue);
+  --button-border-color-hover: var(--dark-blue);
+  --button-font-color-hover: var(--dark-blue);
+}
+
+.light-mode {
+  --main-wrapper-background-color: var(--light-white);
+  --primary-font-color: var(--light-black);
+  --secondary-font-color: var(--grey);
+
+  --options-color: var(--light-blue);
+  --options-color-hover: var(--dark-blue);
+
+  --primary-anchor-color: var(--off-blue);
+  --primary-anchor-color-hover: var(--dark-blue);
+
+  --button-border-color: var(--light-blue);
+  --button-font-color: var(--light-blue);
+  --button-border-color-hover: var(--dark-blue);
+  --button-font-color-hover: var(--dark-blue);
+}
