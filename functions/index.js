@@ -11,9 +11,9 @@ let quotesList = [];
 
 async function getQuotes() {
   const data = [];
-  const snapshot = await db.collection("quotes").get();
+  const snapshot = await db.collection("quotesV2").get();
   snapshot.forEach((doc) => {
-    data.push(doc.data());
+    if (doc.data().status === "active") data.push(doc.data());
   });
 
   return data;
@@ -87,7 +87,7 @@ app.get("/", async (req, res) => {
     return res.render("home", {
       image_name: quote.image_name,
       message: quote.message,
-      image_link: quote.image_link,
+      image_link: quote.imageUrl,
       current_year: new Date().getFullYear(),
     });
   } else {
@@ -103,7 +103,11 @@ app.get("/quote", async (req, res) => {
   if (quote) {
     return res.status(200).send({
       status: 200,
-      res: quote,
+      res: {
+        image_name: quote.image_name,
+        message: quote.message,
+        image_link: quote.imageUrl,
+      },
     });
   } else {
     return res.status(200).send({
